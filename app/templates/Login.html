@@ -1,0 +1,29 @@
+{% extends "signup.html" %} {% load static %} {% block "form" %}
+<form>
+  {% comment %}
+  <!-- Email input -->
+  {% endcomment %}
+  <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example3">Email address</label>
+    <input type="email" id="form3Example3" class="form-control" />
+  </div>
+
+  {% comment %}
+  <!-- Password input -->
+  {% endcomment %}
+  <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example4">Password</label>
+    <input type="password" id="form3Example4" class="form-control" />
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100 btn-block mb-4">
+    Sign in
+  </button>
+
+  <div class="d-flex gap-2">
+    <p>Don't Have an account?</p>
+
+    <a href={% url 'singup' %}>Sign in</a>
+  </div>
+</form>
+{% endblock "form" %}

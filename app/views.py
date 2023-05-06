@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from . forms import myform
-def home(request):
+def signup(request):
     fm = myform()
-    return render(request, "index.html" , {"myform":fm})
+    return render(request, "signup.html" , {"myform":fm})
+
+def login(request):
+    return render(request, "login.html" )
