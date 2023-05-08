@@ -5,24 +5,26 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     let check = true;
     var formData = new FormData(form);
+    var formDataObject = {};
     for (const [key, value] of formData) {
-      console.log(`${key}: ${value}\n`);
       if (!value || value == " ") {
         check = false;
         let element = document.getElementById(`${key}`);
         element.classList.add("is-invalid");
       }
     }
-
+    for (var pair of formData.entries()) {
+      formDataObject[pair[0]] = pair[1];
+    }
     if (check) {
       fetch(form.action, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          "X-CSRFToken": formData.csrfmiddlewaretoken, // Include the CSRF token in the headers
+          "X-CSRFToken": formDataObject["csrfmiddlewaretoken"], // Include the CSRF token in the headers
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formDataObject),
       })
         .then((res) => {
           if (res.ok) {
