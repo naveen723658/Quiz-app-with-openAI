@@ -13,6 +13,20 @@ def generateOTP() :
          OTP += digits[math.floor(random.random() * 10)]
      return OTP
 
+def home(request):
+    data = [
+        {
+            'image':"https://rb.gy/quegy",
+            'title':"Python",
+            'desc':"Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        {
+            'image':"https://rb.gy/quegy",
+            'title':"C++",
+            'desc':"Some quick example text to build on the card title and make up the bulk of the card's content."
+        }
+    ]
+    return render(request, "index.html", {'data' : data})
 
 def signup(request):
     if request.method == "POST":

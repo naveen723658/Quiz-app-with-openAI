@@ -1,0 +1,16 @@
+{% extends "signup.html" %} {% load static %} {% load crispy_forms_tags %} 
+{% block "main" %}
+<div class="row row-cols-4 w-100 gap-4">
+  {% for item in data %}
+
+  <div class="card col" style="width: 18rem">
+    <img class="card-img-top" src="{{item.image}}" alt="Card image cap" />
+    <div class="card-body">
+      <h5>{{item.title}}</h5>
+      <p class="card-text">{{item.desc}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock "main" %}
