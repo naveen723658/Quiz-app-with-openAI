@@ -1,3 +1,11 @@
+import Authentication from "../components/home";
+import Background from "../components/background";
+
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>;
-  }
+  return (
+    <>
+      <Background />
+      <Authentication />
+    </>
+  );
+}

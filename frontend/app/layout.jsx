@@ -1,7 +1,8 @@
+import '../styles/style.css';
 export default function RootLayout({ children }) {
     return (
       <html lang="en">
-        <body>{children}</body>
+        <body className='bg-gradient-to-r from-slate-900 to-slate-700'>{children}</body>
       </html>
     );
   }
