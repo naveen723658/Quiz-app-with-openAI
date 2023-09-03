@@ -1,3 +1,3 @@
 # Quiz-app-with-openAI
 
-This project currently on Hold
+This project is currently on Hold
